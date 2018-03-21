@@ -2562,7 +2562,7 @@ html.no-csstransitions .home-content__main {
     background-size: cover;
     background-position: center, center;
     padding-top: 10rem;
-    padding-bottom: 12rem;
+    padding-bottom: 1rem;
     color: rgba(255, 255, 255, 0.5);
     position: relative;
 }
@@ -2628,6 +2628,7 @@ html.no-csstransitions .home-content__main {
 .contact__main {
     max-width: 900px;
     position: relative;
+    margin-bottom: 4rem;
 }
 
 .contact__main h4 {
@@ -2635,96 +2636,17 @@ html.no-csstransitions .home-content__main {
 }
 
 .contact__infos {
-    font-size: 1.5rem;
-}
-
-.contact__form {
-    padding-right: 40px;
-}
-
-.contact__form input[type="email"], 
-.contact__form input[type="number"], 
-.contact__form input[type="text"], 
-.contact__form input[type="tel"], 
-.contact__form input[type="url"], 
-.contact__form textarea {
-    background-color: transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: .9rem;
-    color: rgba(255, 255, 255, 0.75);
-}
-
-.contact__form input[type="email"]:focus, 
-.contact__form input[type="number"]:focus, 
-.contact__form input[type="text"]:focus, 
-.contact__form input[type="tel"]:focus, 
-.contact__form input[type="url"]:focus, 
-.contact__form textarea:focus {
-    color: white;
-    border-bottom: 1px solid white;
-}
-
-.contact__form button {
-    margin-top: 4.2rem;
-    padding: 0 8rem;
-    background-color: #144ead;
-    border-color: #144ead;
-}
-
-.message-warning, .message-success {
-    display: none;
-    background: #0D0A0B;
-    font-size: 1.5rem;
-    line-height: 2;
-    padding: 3rem;
-    margin-bottom: 3.6rem;
-    width: 100%;
-}
-
-.message-warning {
-    color: #ff6163;
-}
-
-.message-success {
-    color: #008C2C;
-}
-
-.message-warning i, .message-success i {
-    margin-right: 10px;
-    font-size: 1.2rem;
-}
-
-
-/* form loader */
-
-.submit-loader {
-    display: none;
-    position: relative;
-    left: 0;
-    top: 1.8rem;
-    width: 100%;
+    font-size: 2rem;
     text-align: center;
-    margin-bottom: 4.2rem;
 }
-
-.submit-loader .text-loader {
-    display: none;
-    font-family: "montserrat-bold", sans-serif;
-    font-size: 1.4rem;
-    color: #FFFFFF;
-    letter-spacing: .2rem;
-    text-transform: uppercase;
+.contact_icons {
+    text-align: center;
+    padding: 2rem 0;
+    font-family: "montserrat-regular", sans-serif;
 }
-
-.oldie .submit-loader .s-loader {
-    display: none;
+.icon_size {
+    font-size: 6rem;
 }
-
-.oldie .submit-loader .text-loader {
-    display: block;
-}
-
-
 /* --------------------------------------------------------------- 
  * loader animation - (_site-layout.scss)
  * --------------------------------------------------------------- */
@@ -2903,8 +2825,9 @@ footer a:hover, footer a:focus {
 
 .copyright {
     display: inline-block;
-    margin: 1rem 0 0;
-    color: #6c6c6c;
+    margin: 1rem 0;
+    padding: 3rem 0 1rem;
+    color: #7c7c7c;
 }
 
 
