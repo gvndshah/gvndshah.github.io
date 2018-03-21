@@ -1672,6 +1672,8 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     background-color: transparent;
     position: relative;
     display: table;
+    /*background-image: url("../images/IMG_0137.jpg");
+*/
 }
 
 .s-home .shadow-overlay {
