@@ -1672,8 +1672,13 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     background-color: transparent;
     position: relative;
     display: table;
-    /*background-image: url("../images/IMG_0137.jpg");
-*/
+    background-size: cover;
+    background-image: url("../images/IMG_0137.jpg");
+    background-repeat: no-repeat;
+    background-position: center, center;
+    color: rgba(255, 255, 255, 0.5);
+    position: relative;
+    
 }
 
 .s-home .shadow-overlay {
@@ -2964,6 +2969,7 @@ html.no-csstransitions .home-content__main {
     background-color: #151515;
     background-image: url("../images/contact-bg1.jpg");
     background-repeat: no-repeat;
+    background-size: cover;
     background-position: center, center;
     padding-top: 10rem;
     padding-bottom: 12rem;
