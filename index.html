@@ -552,31 +552,30 @@
             <div class="col-eight tab-full contact__form">
                 <form name="response-form" id="response-form">
                     <fieldset>
-    
-                    <div class="form-field">
-                        <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required aria-required="true" class="full-width">
-                    </div>
-                    <div class="form-field">
-                        <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required aria-required="true" class="full-width">
-                    </div>
-                    <div class="form-field">
-                        <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="" class="full-width">
-                    </div>
-                    <div class="form-field">
-                        <textarea name="contactMessage" id="contactMessage" placeholder="message" rows="5" cols="50" required aria-required="true" class="full-width"></textarea>
-                    </div>
-                    <div class="form-field cvbutton">
-                        <button class="btn--primary" type="submit">Submit</button>
-                        <div class="submit-loader">
-                            <div class="text-loader">Sending...</div>
-                            <div class="s-loader">
-                                <div class="bounce1"></div>
-                                <div class="bounce2"></div>
-                                <div class="bounce3"></div>
+                        <div class="form-field">
+                            <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required aria-required="true" class="full-width">
+                        </div>
+                        <div class="form-field">
+                            <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required aria-required="true" class="full-width">
+                        </div>
+                        <div class="form-field">
+                            <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="" class="full-width">
+                        </div>
+                        <div class="form-field">
+                            <textarea name="contactMessage" id="contactMessage" placeholder="message" rows="5" cols="50" required aria-required="true" class="full-width"></textarea>
+                        </div>
+                        <div class="form-field cvbutton">
+                            <button class="btn--primary" type="submit">Submit</button>
+                            <div class="submit-loader">
+                                <div class="text-loader">Sending...</div>
+                                <div class="s-loader">
+                                    <div class="bounce1"></div>
+                                    <div class="bounce2"></div>
+                                    <div class="bounce3"></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-    
+        
                     </fieldset>
                 </form>
 
@@ -696,69 +695,21 @@
     <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
     <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
     <script>
+        var $form = $('form#response-form'),
+            url = 'https://script.google.com/macros/s/AKfycbwd5TI73a2Mg4n5U_eDo0UUsSofW_Kh7FvOz97lkaOLars39xA/exec'
 
-
-        // Variable to hold request
-        var request;
-
-        // Bind to the submit event of our form
-        $("#response-form").submit(function(event){
-
-            // Abort any pending request
-            if (request) {
-                request.abort();
-            }
-            // setup some local variables
-            var $form = $(this);
-
-            // Let's select and cache all the fields
-            var $inputs = $form.find("input, select, button, textarea");
-
-            // Serialize the data in the form
-            var serializedData = $form.serialize();
-
-            // Let's disable the inputs for the duration of the Ajax request.
-            // Note: we disable elements AFTER the form data has been serialized.
-            // Disabled form elements will not be serialized.
-            $inputs.prop("disabled", true);
-
-            // Fire off the request to /form.php
-            request = $.ajax({
-                url: "https://script.google.com/macros/s/AKfycbwd5TI73a2Mg4n5U_eDo0UUsSofW_Kh7FvOz97lkaOLars39xA/exec",
-                type: "post",
-                data: serializedData
-            });
-
-            // Callback handler that will be called on success
-            request.done(function (response, textStatus, jqXHR){
-                // Log a message to the console
-                console.log("Hooray, it worked!");
-                console.log(response);
-                console.log(textStatus);
-                console.log(jqXHR);
-            });
-
-            // Callback handler that will be called on failure
-            request.fail(function (jqXHR, textStatus, errorThrown){
-                // Log the error to the console
-                console.error(
-                    "The following error occurred: "+
-                    textStatus, errorThrown
-                );
-            });
-
-            // Callback handler that will be called regardless
-            // if the request failed or succeeded
-            request.always(function () {
-                // Reenable the inputs
-                $inputs.prop("disabled", false);
-            });
-
-            // Prevent default posting of form
-            event.preventDefault();
-        });
+        $('#submit-form').on('click', function(e) {
+          e.preventDefault();
+          var jqxhr = $.ajax({
+            url: url,
+            method: "GET",
+            dataType: "json",
+            data: $form.serializeObject()
+          }).success(
+            // do something
+          );
+        })
     </script>
-
 </body>
 
 </html>
