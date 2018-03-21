@@ -45,7 +45,7 @@ a {
 }
 
 a:hover, a:focus, a:active {
-    color: #191A3F;
+    color: #eeeeee;
 }
 
 a:focus {
@@ -2628,7 +2628,7 @@ html.no-csstransitions .home-content__main {
 .contact__main {
     max-width: 900px;
     position: relative;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
 
 .contact__main h4 {
@@ -2646,6 +2646,12 @@ html.no-csstransitions .home-content__main {
 }
 .icon_size {
     font-size: 6rem;
+}
+.social_media_links {
+    color: rgba(255,255,255,0.5);
+}
+#contact .section-intro {
+    padding: 1rem;
 }
 /* --------------------------------------------------------------- 
  * loader animation - (_site-layout.scss)
